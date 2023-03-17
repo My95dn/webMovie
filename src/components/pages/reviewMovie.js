@@ -129,6 +129,14 @@ function ReviewMovie() {
       id: 545611,
       link: "https://www.youtube.com/embed/wxN1T1uxQ2g",
     },
+    {
+      id: 850871,
+      link: "https://www.youtube.com/embed/QaqLBfOf0Cg",
+    },
+    {
+      id: 1026563,
+      link: "https://www.youtube.com/embed/cCoRo5OR0WA",
+    },
   ];
   let trailer = "";
   const [input, setInput] = useState("");

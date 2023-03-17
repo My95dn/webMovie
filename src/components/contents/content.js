@@ -9,6 +9,7 @@ import { Context } from "../../App";
 import Footer from "../footer/footer";
 function Contents() {
   const img = useContext(Context)
+  console.log(img)
   const [test, setTest] = useState(1);
   const [show, setshow] = useState(false);
   const numberFive = 6;
@@ -71,7 +72,8 @@ function Contents() {
 
         <Content>
           {renderImage(images)}
-          {show && <AiOutlineLoading3Quarters className="loading" />}
+          <AiOutlineLoading3Quarters className="loading" />
+          {/* {show && <AiOutlineLoading3Quarters className="loading" />} */}
         </Content>
         </div>
         <Pagemovies>{elementPages}</Pagemovies>
@@ -198,9 +200,10 @@ const Content = styled.div`
     display: grid;
     grid-template-columns: repeat(2,185px);
     grid-template-rows: repeat(1,300px);
+    
     padding-left: 0;
     margin-top: 0;
-    padding-bottom: 0;
+    padding-bottom: 50px;
     gap: 0;
     &:hover .image{
       opacity: 1;
@@ -214,6 +217,9 @@ const Content = styled.div`
       &:hover {
         transform: scale(1);
       }
+    }
+    .loading {
+      left: 44%;
     }
     
   }
