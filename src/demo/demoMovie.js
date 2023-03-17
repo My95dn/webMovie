@@ -13,7 +13,7 @@ function DemoSlider(props) {
             className='section'
             width='100%'
             height='100%'  
-            playing={false}
+            playing={true}
             loop={true}
             volume={1}
             muted={false}
