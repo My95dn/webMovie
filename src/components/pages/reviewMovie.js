@@ -660,6 +660,15 @@ const MovieCommentary = styled.div`
     .comment {
       margin-left: -2px;
     }
+    .photo {
+      width: 8%;
+    }
+    .app-avatar {
+      flex-basis: 9%;
+    }
+    .avarta-comment {
+      flex-basis: 8%;
+    }
   }
 `;
 const TrailerMovie = styled.div`
@@ -690,6 +699,7 @@ const TrailerMovie = styled.div`
     .iframe {
       width: 97%;
     }
+    
   }
 `;
 const Content = styled.div`
@@ -823,5 +833,6 @@ const Content = styled.div`
     .text-trailer {
       font-size: 1.1rem;
     }
+    
   }
 `;

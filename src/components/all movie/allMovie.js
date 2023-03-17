@@ -116,4 +116,12 @@ const ContentMovie = styled.div`
       border-radius: 9%;
     }
   }
+  @media (min-width: 48em) and (max-width: 64em) {
+    .container {
+      grid-template-columns: repeat(3,250px);
+    }
+    .name-title {
+      font-size: 0.85rem;
+    }
+  }
 `;

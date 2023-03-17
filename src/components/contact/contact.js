@@ -73,10 +73,7 @@ function Contact() {
           </p>
         </div>
         <div style={{ backgroundColor: "#111319" }} className="app-main">
-          <div
-            className="container"
-            
-          >
+          <div className="container">
             <ul className="list-item">
               <li>Sứ Mệnh</li>
               <p>Sức sáng tạo đưa ước mơ thăng hoa</p>
@@ -203,6 +200,7 @@ const Content = styled.div`
     }
     ul li {
       font-size: 0.9rem;
+      list-style: none;
     }
      p {
       font-size: 0.8rem;
@@ -211,6 +209,16 @@ const Content = styled.div`
     }
     ul {
       padding: 10px;
+    }
+    
+  }
+  @media (min-width: 48em) and (max-width: 64em) {
+    .contact-text {
+      line-height: 1.5rem;
+    }
+    .list-item {
+      margin-left: 50px;
+
     }
   }
 `;

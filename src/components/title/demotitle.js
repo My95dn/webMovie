@@ -20,9 +20,10 @@ border-bottom: 1px solid #878589;
   font-size: 1.3rem;
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-left: 10px;
 }
 @media (min-width: 48em) and (max-width: 64em) {
       font-size: 1.5rem;
-  
+      margin-left: 10px;
 }
 `

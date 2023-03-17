@@ -64,6 +64,8 @@ function Movies() {
             paddingBottom: "20px",
             borderBottom: "1px solid #e9ebee",
           }}
+
+          className="app-title"
         >
           YOU MAY LIKE TO SEE
         </div>
@@ -175,6 +177,15 @@ const Content = styled.div`
     }
     .loading {
       left: 44%;
+    }
+  }
+  @media (min-width: 48em) and (max-width: 64em) {
+    .app-title {
+      margin-left: 10px;
+    }
+    .container {
+      grid-template-columns: repeat(2,390px);
+      padding: 10px;
     }
   }
 `;

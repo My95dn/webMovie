@@ -12,13 +12,13 @@ import React, { useMemo } from "react";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { json, Link } from "react-router-dom";
 
 function Header(prop) {
   const url = "https://image.tmdb.org/t/p/w500";
   const [images, setimage] = useState([]);
   const [int, setInt] = useState("");
-  const [active, setActive] = useState("");
+  const [active, setActive] = useState('');
   const [viewscoll, setviewscoll] = useState(0);
   const [loadMore, setloadMore] = useState(5);
 
@@ -49,7 +49,7 @@ function Header(prop) {
               className="imagess"
               src={show}
               alt={i.original_title}
-              style={{ width: "30%", padding: "10px 10px" }}
+             
             />
             <span className="showtitle">{i.title}</span>
           </a>
@@ -109,6 +109,7 @@ function Header(prop) {
   };
   const handleActive = (item) => {
     setActive(item);
+    
   };
   const handleMenu = () => {
     setMoudle((pre) => !pre);
@@ -119,6 +120,7 @@ function Header(prop) {
   const handleMoudleBackgroud = () => {
     setMoudle((pre) => !pre);
   };
+  
   return (
     <Navbar>
       <div
@@ -193,7 +195,7 @@ function Header(prop) {
               className="homeIcon"
             />
             <Link to="/allMovies">
-              <li className="link" onClick={() => handleActive("All movie")}>
+              <li className="link" onClick={() => handleActive("All movie")} style={active !== 'All movie' ? {color: '#000'} : {color: 'red'}}>
                 All movie
               </li>
             </Link>
@@ -404,6 +406,8 @@ const Navbar = styled.div`
   }
   .imagess {
     cursor: pointer;
+    width: 30%;
+    padding: 10px;
     &:hover {
       opacity: 0.8;
     }
@@ -462,6 +466,7 @@ const Navbar = styled.div`
     margin-right: 10px;
   }
   @media (max-width: 48em) {
+    
     .loading {
       left: 14%;
       top: 5%;
@@ -518,7 +523,7 @@ const Navbar = styled.div`
     }
     .moudle-app {
       transform: translateX(-100%);
-      transition: all 1s;
+      transition: all 0.5s;
       display: block;
       position: fixed;
       left: 0;
@@ -561,6 +566,10 @@ const Navbar = styled.div`
 
       z-index: 10;
     }
+    .imagess {
+      width: 50%;
+    }
+    
   }
   @media (min-width: 48em) and (max-width: 64em) {
     .sub {
@@ -598,14 +607,14 @@ const Navbar = styled.div`
     .close {
       color: #fff;
       position: absolute;
-      top: 19%;
-      right: 27%;
-      font-size: 1.5rem;
+      top: 28%;
+      right: 19%;
+      font-size: 1.8rem;
       padding: 5px;
     }
     .moudle-app {
       transform: translateX(-100%);
-      transition: all 1s;
+      transition: all 0.5s;
       display: block;
       position: fixed;
       left: 0;

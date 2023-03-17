@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import {useContext} from 'react'
+import { useContext } from "react";
 import { Context } from "../../App";
 function Moviecontent() {
   const [slider, setslider] = useState(0);
   const [viewWidth, setviewWidth] = useState();
   const clientwidth = useRef();
-  const dataAPI = useContext(Context)
+  const dataAPI = useContext(Context);
   const number = 90;
   const view = "https://image.tmdb.org/t/p/w500";
   let subtime;
@@ -19,7 +19,7 @@ function Moviecontent() {
       clearInterval(subtime);
     };
   }, [slider]);
-  
+
   function handleLeft() {
     const sub = clientwidth.current.clientWidth;
 
@@ -35,39 +35,42 @@ function Moviecontent() {
     setslider((pre) => (pre > dataAPI.length / 2 - 1 ? 0 : pre + 1));
   };
   return (
-    <Slider>
-      <Showmovie
-        style={{
-          transform: `translateX(-${slider * (viewWidth - number) * 2}px)`,
-        }}
-      >
-        {dataAPI.map((element) => {
-          const show = view + element.backdrop_path;
-          return (
-            <div  className="parent" ref={clientwidth} key={element.id}>
-              <div className="show">
-                <a href={`/reviewMovie/${element.id}`} className="sub">
-                  <img src={show} className="image" />
-                  <div className="section">
-                    <h3 className="movie">{element.title} </h3>
-                  </div>
-                </a>
+    <Appslider>
+      <Slider>
+        <Showmovie
+          style={{
+            transform: `translateX(-${slider * (viewWidth - number) * 2}px)`,
+          }}
+        >
+          {dataAPI.map((element) => {
+            const show = view + element.backdrop_path;
+            return (
+              <div className="parent" ref={clientwidth} key={element.id}>
+                <div className="show">
+                  <a href={`/reviewMovie/${element.id}`} className="sub">
+                    <img src={show} className="image" />
+                    <div className="section">
+                      <h3 className="movie">{element.title} </h3>
+                    </div>
+                  </a>
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </Showmovie>
-      <FaAngleLeft className="left" onClick={handleLeft} />
-      <FaAngleRight className="right" onClick={handleView} />
-    </Slider>
+            );
+          })}
+        </Showmovie>
+        <FaAngleLeft className="left" onClick={handleLeft} />
+        <FaAngleRight className="right" onClick={handleView} />
+      </Slider>
+    </Appslider>
   );
 }
 
 export default Moviecontent;
-const Slider = styled.div`
+const Appslider = styled.div`
   position: relative;
+`;
+const Slider = styled.div`
   overflow: hidden;
-  scroll-behavior: smooth;
   .left {
     color: #fff;
     position: absolute;
@@ -98,18 +101,22 @@ const Slider = styled.div`
       background-color: rgba(0, 0, 0, 0.8);
     }
   }
-  @media (max-width: 48em)  {
+  @media (max-width: 48em) {
+    overflow: auto;
+    scroll-snap-type: x mandatory;
     .right {
       font-size: 2.5rem;
+      top: 41%;
     }
     .left {
       font-size: 2.5rem;
+      top: 41%;
     }
   }
 `;
 const Showmovie = styled.div`
   display: flex;
-  
+
   transition: all 1.5s;
   background-color: #00081c;
   scroll-behavior: smooth;
@@ -140,7 +147,6 @@ const Showmovie = styled.div`
     color: #ff8040;
   }
   .section {
-    
     position: absolute;
     left: 0;
     bottom: 0;
@@ -155,20 +161,21 @@ const Showmovie = styled.div`
     &:hover {
       opacity: 1;
     }
-    
   }
   @media (max-width: 48em) {
     display: grid;
     grid-template-columns: repeat(20, 300px);
+    &:hover .sub {
+      opacity: 1;
+    }
     .image {
       width: 100%;
     }
     .movie {
-      font-size: 0.85rem;
+      font-size: 0.79rem;
     }
-    
-   }
-   @media (min-width: 48em) and (max-width: 64em) {
+  }
+  @media (min-width: 48em) and (max-width: 64em) {
     display: grid;
     grid-template-columns: repeat(20, 400px);
     .image {
@@ -177,5 +184,5 @@ const Showmovie = styled.div`
     .movie {
       font-size: 1rem;
     }
-   }
+  }
 `;

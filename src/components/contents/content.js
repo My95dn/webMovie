@@ -199,15 +199,21 @@ const Content = styled.div`
     grid-template-columns: repeat(2,185px);
     grid-template-rows: repeat(1,300px);
     padding-left: 0;
-    gap: 0;
     margin-top: 0;
     padding-bottom: 0;
+    gap: 0;
+    &:hover .image{
+      opacity: 1;
+    }
     .name-title {
-      font-size: 0.65rem;
+      font-size: 0.59rem;
       padding: 10px 5px;
     }
     .view {
       border-radius: 42px;
+      &:hover {
+        transform: scale(1);
+      }
     }
     
   }
@@ -215,8 +221,20 @@ const Content = styled.div`
     grid-template-columns: repeat(3,260px);
     grid-template-rows: none;
     padding-left: 0;
+    gap: 0;
+    &:hover .image{
+      opacity: 1;
+    }
     .loading {
       left: 47%;
+    }
+    .view {
+      &:hover {
+        transform: scale(1);
+      }
+    }
+    .name-title {
+      font-size: 0.9rem;
     }
   }
 `;
