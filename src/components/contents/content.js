@@ -72,8 +72,7 @@ function Contents() {
 
         <Content>
           {renderImage(images)}
-          <AiOutlineLoading3Quarters className="loading" />
-          {/* {show && <AiOutlineLoading3Quarters className="loading" />} */}
+          {show && <AiOutlineLoading3Quarters className="loading" />}
         </Content>
         </div>
         <Pagemovies>{elementPages}</Pagemovies>
