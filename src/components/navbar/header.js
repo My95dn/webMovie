@@ -13,7 +13,8 @@ import React, { useMemo } from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { json, Link } from "react-router-dom";
-
+import image from '..//..//assets/images/cgv-trans-02.png'
+console.log(image)
 function Header(prop) {
   const url = "https://image.tmdb.org/t/p/w500";
   const [images, setimage] = useState([]);
@@ -135,7 +136,7 @@ function Header(prop) {
           <a href="/" className="subimg">
             <img
               className="image"
-              src="https://inkythuatso.com/uploads/thumbnails/800/2021/09/cgv-logo-inkythuatso-1-14-16-41-01.jpg"
+              src={image}
             />
           </a>
 
@@ -323,7 +324,7 @@ const Navbar = styled.div`
   }
   .image {
     width: 100%;
-    height: 100%;
+    height: 90%;
   }
   .section {
     position: relative;

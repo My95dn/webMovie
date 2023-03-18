@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   AiFillCamera,
   AiFillDelete,
@@ -137,6 +137,10 @@ function ReviewMovie() {
       id: 1026563,
       link: "https://www.youtube.com/embed/cCoRo5OR0WA",
     },
+    {
+      id: 32516,
+      link: "https://www.youtube.com/embed/S_SD6ON8SWU",
+    },
   ];
   let trailer = "";
   const [input, setInput] = useState("");
@@ -159,6 +163,7 @@ function ReviewMovie() {
   let user =
     "https://www.shutterstock.com/image-vector/user-icon-trendy-flat-style-260nw-418179865.jpg";
   function handleDelete(index) {
+    setsub(pre => pre -1)
     comment.splice(index, 1);
     setComment((pre) => [...pre]);
   }
@@ -203,7 +208,6 @@ function ReviewMovie() {
     file.preview = URL.createObjectURL(file);
     setAvatar(file);
   };
-
   const handleActive = (id) => {
     setactiveIndex(id);
     if (activeindex == id) {

@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import { VscMute, VscUnmute } from 'react-icons/vsc';
 import React from 'react';
-
+import video from '..//video/video.mp4'
 function DemoSlider(props) {
     const [volum, setvolum] = useState(false)
-
+    useEffect(() => {
+    }, [])
     return(
+        <div>
         <Movie>
             <ReactPlayer 
             className='section'
@@ -46,9 +48,21 @@ function DemoSlider(props) {
             </div>
             
         </Movie>
+        <AppIframe >
+                <video src={video} controls autoPlay loop style={{width: '100%'}}/>
+
+        </AppIframe>
+        </div>
     )
 }
 export default DemoSlider;
+const AppIframe = styled.div`
+display: none;
+@media (max-width: 48em) {
+    background-color: #000;
+    display: block;
+}
+`
 const Movie = styled.div`
 scroll-behavior: smooth;
 padding-top: 56%;
@@ -98,7 +112,9 @@ background-color: #000;
     border: 1px solid #222;
     background: rgba(100,100,100,0.3);
 }
+
 @media (max-width: 48em) {
+    display: none;
     .title {
         font-size: 1.3rem;
         margin-top: 8px;

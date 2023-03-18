@@ -9,9 +9,9 @@ import { Context } from "../../App";
 import Footer from "../footer/footer";
 function Contents() {
   const img = useContext(Context)
-  console.log(img)
   const [test, setTest] = useState(1);
   const [show, setshow] = useState(false);
+  // const [width, setWidth] = useState(window.innerWidth)
   const numberFive = 6;
   const number = 8;
   const indexMinmax = test * number;
@@ -24,8 +24,9 @@ function Contents() {
   }
   
   const handlePages = (e) => {
-    
     const time = setTimeout(() => {
+      window.scrollTo(0 , 1500)
+      
       setshow((pre) => !pre);
       setTest(e.target.id);
     }, 800);
@@ -65,6 +66,9 @@ function Contents() {
     });
     return value;
   }
+  // const handleWindowwidth = () => {
+  //   setWidth(window.innerWidth)
+  // }
   return (
     <div>
       <div>
