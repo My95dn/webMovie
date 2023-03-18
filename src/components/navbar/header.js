@@ -322,6 +322,7 @@ const Navbar = styled.div`
     margin-left: 40px;
   }
   .image {
+    width: 100%;
     height: 100%;
   }
   .section {
