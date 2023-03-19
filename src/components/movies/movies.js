@@ -75,7 +75,7 @@ function Movies() {
         >
           {renderImages()}
         </div>
-        <div style={{ textAlign: "center" }}>
+        <div style={loadMovie >= images.length ? {display: 'none'} : {display: 'flex',justifyContent: 'center'}}>
           <button className="loadmore" onClick={handleLoadMore}>
             Load More
           </button>

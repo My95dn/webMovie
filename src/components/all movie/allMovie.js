@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 function AllMovies() {
   const [data, setData] = useState([]);
+  const [width, setWidth] = useState(window.innerWidth)
   const URL_IMG = "https://image.tmdb.org/t/p/w500";
   useEffect(() => {
     fetch(
@@ -15,6 +16,12 @@ function AllMovies() {
         setData(value.results);
       });
   }, []);
+  useEffect(() => {
+    setWidth(window.innerWidth)
+    if(width < 768) {
+      window.scrollTo(0, 0)
+    }
+  }, [])
   return (
     <div>
       <div>
@@ -65,9 +72,7 @@ const ContentMovie = styled.div`
     display: flex;
     justify-content: center;
   }
-  &:hover .image {
-    opacity: 0.7;
-  }
+  
   .image {
     width: 100%;
     opacity: 0.9;
@@ -114,6 +119,9 @@ const ContentMovie = styled.div`
     }
     .view {
       border-radius: 9%;
+      &:hover {
+        transform: scale(1);
+      }
     }
   }
   @media (min-width: 48em) and (max-width: 64em) {
@@ -122,6 +130,11 @@ const ContentMovie = styled.div`
     }
     .name-title {
       font-size: 0.85rem;
+    }
+    .view {
+      &:hover {
+        transform: scale(1);
+      }
     }
   }
 `;

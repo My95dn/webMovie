@@ -6,8 +6,10 @@ import { Context } from "../../App";
 function Moviecontent() {
   const [slider, setslider] = useState(0);
   const [viewWidth, setviewWidth] = useState();
+  const [width, setWidth] = useState(window.innerWidth)
   const clientwidth = useRef();
   const dataAPI = useContext(Context);
+  const seventeen = 17
   const number = 90;
   const view = "https://image.tmdb.org/t/p/w500";
   let subtime;
@@ -34,11 +36,22 @@ function Moviecontent() {
 
     setslider((pre) => (pre > dataAPI.length / 2 - 1 ? 0 : pre + 1));
   };
+  const handleWidth = () => {
+    setWidth(window.innerWidth)
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleWidth)
+    return () => {
+      window.removeEventListener('resize', handleWidth)
+    }
+  }, [])
   return (
     <Appslider>
       <Slider>
         <Showmovie
-          style={{
+          style={width < 768 ?  {
+            transform: `translateX(-${slider * (viewWidth - seventeen) * 2}px)`,
+          } : {
             transform: `translateX(-${slider * (viewWidth - number) * 2}px)`,
           }}
         >

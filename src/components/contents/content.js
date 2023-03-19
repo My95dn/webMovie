@@ -25,10 +25,17 @@ function Contents() {
   
   const handlePages = (e) => {
     const time = setTimeout(() => {
-      window.scrollTo(0 , 1500)
+      if(width >= 1024) {
+        window.scrollTo(0, 1500)
+      } else {
+
+        if(width >= 768) {
+          window.scrollTo(0, 600)
+        }
+      }
       if(width < 768) {
         window.scrollTo(0, 390)
-      }
+      } 
       setshow((pre) => !pre);
       setTest(e.target.id);
     }, 800);

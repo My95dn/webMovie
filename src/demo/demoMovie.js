@@ -109,7 +109,6 @@ background-color: #000;
     right: 15%;
     font-size: 2.7rem;
     border-radius: 50%;
-    border: 1px solid #222;
     background: rgba(100,100,100,0.3);
 }
 

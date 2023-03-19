@@ -12,7 +12,7 @@ import React, { useMemo } from "react";
 
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { json, Link } from "react-router-dom";
+import { json, Link, NavLink } from "react-router-dom";
 import image from '..//..//assets/images/cgv-trans-02.png'
 console.log(image)
 function Header(prop) {
@@ -35,7 +35,6 @@ function Header(prop) {
   }
   const handlefilter = () => {
     let data = images.slice(0, loadMore);
-
     const showImage = data.map((i) => {
       const findSearch = i.title.toLowerCase().includes(int.toLowerCase());
       if (findSearch) {
@@ -60,6 +59,7 @@ function Header(prop) {
 
     return showImage;
   };
+  
 
   useEffect(() => {
     const getdata = async () => {
@@ -173,9 +173,9 @@ function Header(prop) {
             >
               {handlefilter()}
               <div className="load-more">
-                {loading && <AiOutlineLoading3Quarters className="loading" />}
+                {loading && <AiOutlineLoading3Quarters className="loading"/>}
 
-                <button className="load-images" onClick={handleLoadimages}>
+                <button className="load-images" onClick={handleLoadimages} style={loadMore >= images.length ? {display: 'none'} : {display: 'block'}}>
                   LoadMore Movie
                 </button>
               </div>
@@ -195,11 +195,9 @@ function Header(prop) {
               style={{ color: `rgba(${useMemo(() => handleColor(opa), [])})` }}
               className="homeIcon"
             />
-            <Link to="/allMovies">
-              <li className="link" onClick={() => handleActive("All movie")} style={active !== 'All movie' ? {color: '#000'} : {color: 'red'}}>
-                All movie
-              </li>
-            </Link>
+            <NavLink to="/allMovies"  style={{color: '#000', fontWeight: '700', marginRight: '50px'}}> 
+                All movie 
+            </NavLink>
             <BiMovie
               style={{ color: `rgba(${useMemo(() => handleColor(opa), [])})` }}
               className="homeIcon"
@@ -310,7 +308,7 @@ const Navbar = styled.div`
     background-color: #fff;
   }
   .active {
-    color: #e66f20;
+    color: green; 
   }
   ul li {
     .link:hover {
@@ -428,6 +426,7 @@ const Navbar = styled.div`
     }
   }
   .loading {
+    
     position: absolute;
     left: 25%;
     top: 9%;
@@ -438,7 +437,8 @@ const Navbar = styled.div`
   }
 
   .load-more {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     margin: 15px 0;
     position: relative;
   }
@@ -466,6 +466,9 @@ const Navbar = styled.div`
     color: rgb(235, 62, 50);
     font-size: 1.7rem;
     margin-right: 10px;
+  }
+  .link {
+    color: red;
   }
   @media (max-width: 48em) {
     

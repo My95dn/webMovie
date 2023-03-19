@@ -141,6 +141,14 @@ function ReviewMovie() {
       id: 32516,
       link: "https://www.youtube.com/embed/S_SD6ON8SWU",
     },
+    {
+      id: 594767,
+      link: "https://www.youtube.com/embed/l37LjoV9W7M",
+    },
+    {
+      id: 804150,
+      link: "https://www.youtube.com/embed/DuWEEKeJLMI",
+    },
   ];
   let trailer = "";
   const [input, setInput] = useState("");
@@ -214,6 +222,9 @@ function ReviewMovie() {
       setYes((pre) => !pre);
     }
   };
+  useEffect(() => {
+    handleActive()
+  }, [])
   const handleBack = (id) => {
     setactive(id);
     if (active == id) {
