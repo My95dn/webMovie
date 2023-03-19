@@ -18,7 +18,7 @@ function DemoSlider(props) {
             playing={true}
             
             loop={true}
-            volume={1}
+            volume={volum ? 1 : 0}
             muted={false}
             url="https://vimeo.com/328542867"
             />
@@ -49,7 +49,7 @@ function DemoSlider(props) {
             
         </Movie>
         <AppIframe >
-                <video src={video} controls autoPlay loop style={{width: '100%'}}/>
+                <video src={video} autoPlay loop controls style={{width: '100%'}}/>
 
         </AppIframe>
         </div>

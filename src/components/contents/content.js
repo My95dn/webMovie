@@ -11,7 +11,7 @@ function Contents() {
   const img = useContext(Context)
   const [test, setTest] = useState(1);
   const [show, setshow] = useState(false);
-  // const [width, setWidth] = useState(window.innerWidth)
+  const [width, setWidth] = useState(window.innerWidth)
   const numberFive = 6;
   const number = 8;
   const indexMinmax = test * number;
@@ -26,7 +26,9 @@ function Contents() {
   const handlePages = (e) => {
     const time = setTimeout(() => {
       window.scrollTo(0 , 1500)
-      
+      if(width < 768) {
+        window.scrollTo(0, 390)
+      }
       setshow((pre) => !pre);
       setTest(e.target.id);
     }, 800);
@@ -66,9 +68,16 @@ function Contents() {
     });
     return value;
   }
-  // const handleWindowwidth = () => {
-  //   setWidth(window.innerWidth)
-  // }
+  const handleWindowwidth = () => {
+    setWidth(window.innerWidth)
+    
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowwidth)
+    return () => {
+      window.removeEventListener('resize', handleWindowwidth)
+    }
+  }, [])
   return (
     <div>
       <div>

@@ -102,8 +102,7 @@ const Slider = styled.div`
     }
   }
   @media (max-width: 48em) {
-    overflow: auto;
-    scroll-snap-type: x mandatory;
+    
     .right {
       font-size: 2.5rem;
       top: 41%;
