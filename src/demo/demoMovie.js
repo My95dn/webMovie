@@ -3,7 +3,7 @@ import ReactPlayer from 'react-player';
 import styled from 'styled-components';
 import { VscMute, VscUnmute } from 'react-icons/vsc';
 import React from 'react';
-import video from '..//video/video.mp4'
+import video from '..//video/netflix_2022_movie_preview_official_trailer (1080p).mp4'
 function DemoSlider(props) {
     const [volum, setvolum] = useState(false)
     useEffect(() => {
