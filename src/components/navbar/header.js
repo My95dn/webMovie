@@ -131,12 +131,12 @@ function Header(prop) {
         }
       >
         <div className="app-sub">
-          <Link to="/" className="subimg">
+          <a href="/" className="subimg">
             <img
               className="image"
               src={image}
             />
-          </Link>
+          </a>
 
           <div className="section">
             <FiSearch className="search" />

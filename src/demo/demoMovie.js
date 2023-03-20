@@ -49,7 +49,7 @@ function DemoSlider(props) {
             
         </Movie>
         <AppIframe >
-                <video src={video} autoPlay loop controls style={{width: '100%'}}/>
+                <video src={video} autoPlay loop controls  className="video"/>
 
         </AppIframe>
         </div>
@@ -61,6 +61,9 @@ display: none;
 @media (max-width: 48em) {
     background-color: #000;
     display: block;
+    .video {
+        width: 100%;
+    }
 }
 `
 const Movie = styled.div`
