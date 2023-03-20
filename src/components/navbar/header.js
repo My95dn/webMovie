@@ -19,7 +19,6 @@ function Header(prop) {
   const url = "https://image.tmdb.org/t/p/w500";
   const [images, setimage] = useState([]);
   const [int, setInt] = useState("");
-  const [active, setActive] = useState('');
   const [viewscoll, setviewscoll] = useState(0);
   const [loadMore, setloadMore] = useState(5);
 
@@ -108,10 +107,7 @@ function Header(prop) {
       }
     };
   };
-  const handleActive = (item) => {
-    setActive(item);
-    
-  };
+  
   const handleMenu = () => {
     setMoudle((pre) => !pre);
   };
@@ -121,7 +117,9 @@ function Header(prop) {
   const handleMoudleBackgroud = () => {
     setMoudle((pre) => !pre);
   };
-  
+  useEffect(() => {
+   window.scrollTo(0, 0)
+  }, [])
   return (
     <Navbar>
       <div
@@ -133,12 +131,12 @@ function Header(prop) {
         }
       >
         <div className="app-sub">
-          <a href="/" className="subimg">
+          <Link to="/" className="subimg">
             <img
               className="image"
               src={image}
             />
-          </a>
+          </Link>
 
           <div className="section">
             <FiSearch className="search" />
@@ -188,23 +186,23 @@ function Header(prop) {
               style={{ color: `rgba(${useMemo(() => handleColor(opa), [])})` }}
               className="homeIcon"
             />
-            <a href="/">
-              <li>Home</li>
-            </a>
+            <NavLink to="/" className="nav-link">
+              Home
+            </NavLink>
             <BiMoviePlay
               style={{ color: `rgba(${useMemo(() => handleColor(opa), [])})` }}
               className="homeIcon"
             />
-            <NavLink to="/allMovies"  style={{color: '#000', fontWeight: '700', marginRight: '50px'}}> 
+            <NavLink to="/allMovies"  className="nav-link"> 
                 All movie 
             </NavLink>
             <BiMovie
               style={{ color: `rgba(${useMemo(() => handleColor(opa), [])})` }}
               className="homeIcon"
             />
-            <Link to="/Contact">
-              <li>Contact</li>
-            </Link>
+            <NavLink to="/Contact" className="nav-link">
+              Contact
+            </NavLink>
           </ul>
         </div>
         <div className="app-menu">
@@ -222,43 +220,39 @@ function Header(prop) {
               onClick={handleClosemenu}
             />
             <div className="list-item">
-              <ul>
+              <ul className="ul">
                 <ImHome3
                   style={{
                     color: `rgba(${useMemo(() => handleColor(opa), [])})`,
                   }}
                   className="homeIcon"
                 />
-                <a href="/">
-                  <li>Home</li>
-                </a>
+                <NavLink to="/" className="nav-link">
+                  Home
+                </NavLink>
                 <BiMoviePlay
                   style={{
                     color: `rgba(${useMemo(() => handleColor(opa), [])})`,
                   }}
                   className="homeIcon"
                 />
-                <Link to="/allMovies">
-                  <li
-                    className="link"
-                    onClick={() => handleActive("All movie")}
-                  >
+                <NavLink to="/allMovies" className="nav-link">
+                
                     All movie
-                  </li>
-                </Link>
+                </NavLink>
                 <BiMovie
                   style={{
                     color: `rgba(${useMemo(() => handleColor(opa), [])})`,
                   }}
                   className="homeIcon"
                 />
-                <Link to="/Contact">
-                  <li>Contact</li>
-                </Link>
+                <NavLink to="/Contact" className="nav-link">
+                  Contact
+                </NavLink>
               </ul>
             </div>
             <div style={{ textAlign: "center", marginTop: "35px" }}>
-              <div style={{ display: "flex", justifyContent: "center" }}>
+              <div style={{ display: "flex", justifyContent: "center" }} className="app-phone">
                 <BsFillTelephoneFill
                  
                   className="iconPhone"
@@ -307,8 +301,15 @@ const Navbar = styled.div`
     justify-content: space-between;
     background-color: #fff;
   }
+  .nav-link {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    margin-right: 50px;
+    margin-top: 3px;
+    margin-left: 5px;
+  }
   .active {
-    color: green; 
+    color: #e66f20 !important; 
   }
   ul li {
     .link:hover {
@@ -477,6 +478,12 @@ const Navbar = styled.div`
       top: 5%;
       font-size: 1.5rem;
     }
+    .ul {
+      margin-left: 20%;
+    }
+    .app-phone {
+      margin-left: 12%;
+    }
     .inputSearch {
       font-size: 0.9rem;
     }
@@ -540,7 +547,7 @@ const Navbar = styled.div`
       ul {
         flex-direction: column;
       }
-      ul li {
+      .nav-link {
         color: #fff;
         margin-right: 0;
         margin: 10px 0;

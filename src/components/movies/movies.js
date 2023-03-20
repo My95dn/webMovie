@@ -178,6 +178,11 @@ const Content = styled.div`
     .loading {
       left: 44%;
     }
+    .app {
+      &:hover {
+        transform: scale(1);
+      }
+    }
   }
   @media (min-width: 48em) and (max-width: 64em) {
     .app-title {
@@ -186,6 +191,11 @@ const Content = styled.div`
     .container {
       grid-template-columns: repeat(2,390px);
       padding: 10px;
+    }
+    .app {
+      &:hover {
+        transform: scale(1);
+      }
     }
   }
 `;
