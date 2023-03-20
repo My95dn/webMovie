@@ -49,7 +49,7 @@ function DemoSlider(props) {
             
         </Movie>
         <AppIframe >
-                <video src={video} autoPlay loop controls  className="video"/>
+                <video src={video} autoPlay loop controls muted className="video"/>
 
         </AppIframe>
         </div>
