@@ -30,8 +30,8 @@ function AllMovies() {
       <div style={{ backgroundColor: "#00081c" }}>
         <ContentMovie>
           <div className="app">
-            <div className="container">
-              {data.map((element) => {
+            <div className="container" >
+              {data.map((element,index) => {
                 const movie = URL_IMG + element.poster_path;
                 return (
                   <a
@@ -48,6 +48,7 @@ function AllMovies() {
                   </a>
                 );
               })}
+              
             </div>
           </div>
         </ContentMovie>

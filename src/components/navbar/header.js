@@ -14,7 +14,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { json, Link, NavLink } from "react-router-dom";
 import image from '..//..//assets/images/cgv-trans-02.png'
-console.log(image)
 function Header(prop) {
   const url = "https://image.tmdb.org/t/p/w500";
   const [images, setimage] = useState([]);
@@ -322,7 +321,7 @@ const Navbar = styled.div`
     margin-left: 40px;
   }
   .image {
-    width: 100%;
+    
     height: 90%;
   }
   .section {
@@ -581,11 +580,17 @@ const Navbar = styled.div`
     .imagess {
       width: 50%;
     }
+    .image {
+      width: 100%;
+    }
     
   }
   @media (min-width: 48em) and (max-width: 64em) {
     .sub {
       display: none;
+    }
+    .image {
+      width: 100%;
     }
     .menu {
       display: block;
