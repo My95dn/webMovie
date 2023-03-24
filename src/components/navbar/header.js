@@ -589,6 +589,22 @@ const Navbar = styled.div`
     .sub {
       display: none;
     }
+    .nav-link {
+      color: #fff;
+      margin-right: 0;
+      margin: 20px 0;
+      font-size: 1.5rem;
+    }
+    ul {
+      margin-left: 20%;
+    }
+    .app-phone {
+      margin-left: 19%;
+      
+    }
+    .homeIcon {
+      color: #fff;
+    }
     .image {
       width: 100%;
     }
