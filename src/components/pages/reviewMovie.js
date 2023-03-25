@@ -165,6 +165,10 @@ function ReviewMovie() {
       id: 980078,
       link: "https://www.youtube.com/embed/W3E74j_xFtg",
     },
+    {
+      id: 1087040,
+      link: "https://www.youtube.com/embed/WTAay-4QUuY",
+    },
   ];
   let trailer = "";
   const [input, setInput] = useState("");
@@ -247,6 +251,9 @@ function ReviewMovie() {
       setFeedback((pre) => !pre);
     }
   };
+  useEffect(() => {
+    handleBack()
+  }, [])
   return (
     <div style={{overflow: 'hidden'}}>
       <div>

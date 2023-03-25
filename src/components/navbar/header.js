@@ -26,7 +26,8 @@ function Header(prop) {
   const [moudle, setMoudle] = useState(false);
 
   function renderint(e) {
-    setInt(e.target.value);
+    
+    setInt(e.target.value.trimStart());
   }
   function handleClose() {
     setInt("");

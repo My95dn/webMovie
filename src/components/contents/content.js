@@ -2,15 +2,12 @@ import styled from "styled-components";
 
 import {  useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
-import axios from "axios";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { Context } from "../../App";
 import Footer from "../footer/footer";
-import { useCallback } from "react";
 function Contents() {
   const img = useContext(Context)
- 
   const [test, setTest] = useState(1);
   const [show, setshow] = useState(false);
   const [width, setWidth] = useState(window.innerWidth)
