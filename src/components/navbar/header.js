@@ -19,7 +19,7 @@ function Header(prop) {
   const [images, setimage] = useState([]);
   const [int, setInt] = useState("");
   const [viewscoll, setviewscoll] = useState(0);
-  const [loadMore, setloadMore] = useState(5);
+  const [loadMore, setloadMore] = useState(10);
 
   const opa = 1;
   const [loading, setloading] = useState(false);
@@ -343,6 +343,7 @@ const Navbar = styled.div`
     border-radius: 24px;
     background-color: rgb(45, 47, 52);
     cursor: text;
+    border: none;
   }
 
   .search {
