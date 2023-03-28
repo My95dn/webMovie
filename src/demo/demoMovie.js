@@ -58,6 +58,7 @@ function DemoSlider(props) {
 export default DemoSlider;
 const AppIframe = styled.div`
 display: none;
+margin-top: 29px;
 @media (max-width: 48em) {
     background-color: #000;
     display: block;
@@ -67,6 +68,7 @@ display: none;
 }
 `
 const Movie = styled.div`
+margin-top: 50px;
 scroll-behavior: smooth;
 padding-top: 56%;
 position: relative;
@@ -117,6 +119,7 @@ background-color: #000;
 
 @media (max-width: 48em) {
     display: none;
+    
     .title {
         font-size: 1.3rem;
         margin-top: 8px;
@@ -133,6 +136,7 @@ background-color: #000;
     }
 }
 @media (min-width: 48em) and (max-width: 64em) {
+    margin-top: 16px;
     .text {
         top: 60%;
         font-size: 0.95rem;
