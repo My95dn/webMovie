@@ -28,6 +28,7 @@ function Header(prop) {
   function renderint(e) {
     
     setInt(e.target.value.trimStart());
+    
   }
   function handleClose() {
     setInt("");

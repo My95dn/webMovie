@@ -181,6 +181,10 @@ function ReviewMovie() {
       id: 324552,
       link: "https://www.youtube.com/embed/XGk2EfbD_Ps",
     },
+    {
+      id: 730629,
+      link: "https://www.youtube.com/embed/LVZ9Btv5SNE",
+    },
   ];
   let trailer = "";
   const [input, setInput] = useState("");
@@ -192,9 +196,10 @@ function ReviewMovie() {
   const [yes, setYes] = useState(false);
   const [feedback, setFeedback] = useState(false);
   const URL_IMG = "https://image.tmdb.org/t/p/w500";
+  const imageMovie = "https://actionewz.com/images/articles/banners/1406.jpeg"
   const dataMovies = useLoaderData();
   const show = URL_IMG + dataMovies.poster_path;
-  const showMovie = URL_IMG + dataMovies.backdrop_path;
+  const showMovie = dataMovies.backdrop_path ? URL_IMG + dataMovies.backdrop_path : imageMovie;
   const valueIndex = useRef();
   const commentImage = useRef();
   const group = "group member";
@@ -266,6 +271,7 @@ function ReviewMovie() {
   useEffect(() => {
     handleBack()
   }, [])
+  console.log(imageMovie)
   return (
     <div style={{overflow: 'hidden'}}>
       <div>

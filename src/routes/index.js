@@ -15,8 +15,8 @@ export  const router = createBrowserRouter([
          const dataRe = await axios.get(`https://api.themoviedb.org/3/movie/${params.id}?api_key=1cf50e6248dc270629e802686245c2c8`);        
           
           return dataRe.data;
-          
         },
+        
         
       
 
