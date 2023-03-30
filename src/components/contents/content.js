@@ -8,6 +8,7 @@ import { Context } from "../../App";
 import Footer from "../footer/footer";
 function Contents() {
   const img = useContext(Context)
+  console.log(img)
   const [test, setTest] = useState(1);
   const [show, setshow] = useState(false);
   const [width, setWidth] = useState(window.innerWidth)
@@ -65,9 +66,10 @@ function Contents() {
           <a href={`/reviewMovie/${element.id}`} key={element.id} className="view">
             <div className="zoom">
               <img src={movie} alt="" className="image" />
-            </div>
+            
             <div className="background">
               <h3 className="name-title">{element.title}</h3>
+            </div>
             </div>
           </a>
       );
@@ -161,6 +163,7 @@ const Content = styled.div`
   }
   .image {
     width: 100%;
+    height: 85%;
     opacity: 0.9;
     
   }
@@ -183,12 +186,14 @@ const Content = styled.div`
     background-color: #000;
   }
   .view {
-    height: max-content;
+    
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    height: 100%;
     padding: 10px;
     transition: all 0.5s;
     cursor: pointer;
     margin: 5px 0;
-    border-radius: 44px;
     overflow: hidden;
     &:hover {
       transform: scale(1.1);
@@ -197,8 +202,10 @@ const Content = styled.div`
     }
   }
   .background {
+    overflow: hidden;
     background: linear-gradient(to right, #00f2c0, #00c3da);
-    
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
   .name-title {
     text-align: center;
@@ -210,6 +217,7 @@ const Content = styled.div`
     
   }
   .zoom {
+    height: 100%;
     &:hover .image{
       opacity: 1;
     }
