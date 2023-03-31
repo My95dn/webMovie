@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-import {  useState } from "react";
+import { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { Context } from "../../App";
 import Footer from "../footer/footer";
 function Contents() {
-  const img = useContext(Context)
+  const img = useContext(Context);
   const [test, setTest] = useState(1);
   const [show, setshow] = useState(false);
-  const [width, setWidth] = useState(window.innerWidth)
+  const [width, setWidth] = useState(window.innerWidth);
   const numberFive = 6;
   const number = 8;
   const indexMinmax = test * number;
@@ -21,20 +21,19 @@ function Contents() {
   for (let i = 0; i < movieLength; i++) {
     pages.push(i + 1);
   }
-  
+
   const handlePages = (e) => {
     const time = setTimeout(() => {
-      if(width >= 1024) {
-        window.scrollTo(0, 1500)
+      if (width >= 1024) {
+        window.scrollTo(0, 1500);
       } else {
-
-        if(width >= 768) {
-          window.scrollTo(0, 600)
+        if (width >= 768) {
+          window.scrollTo(0, 600);
         }
       }
-      if(width < 768) {
-        window.scrollTo(0, 390)
-      } 
+      if (width < 768) {
+        window.scrollTo(0, 390);
+      }
       setshow((pre) => !pre);
       setTest(e.target.id);
     }, 800);
@@ -47,9 +46,14 @@ function Contents() {
   };
   const elementPages = pages.map((element) => {
     return (
-      <div key={element}  style={{marginBottom: '30px'}}>
-        <ul >
-          <li className={`page ${test == element? 'activeMovie' :''}`} onClick={handlePages} id={element} style={test == element ? {color: '#fff'} : {color: ''}}>
+      <div key={element} style={{ marginBottom: "30px" }}>
+        <ul>
+          <li
+            className={`page ${test == element ? "activeMovie" : ""}`}
+            onClick={handlePages}
+            id={element}
+            style={test == element ? { color: "#fff" } : { color: "" }}
+          >
             {element}
           </li>
         </ul>
@@ -57,43 +61,44 @@ function Contents() {
     );
   });
 
-  
   function renderImage(data) {
     const value = data.map((element) => {
       const movie = URL_IMG + element.poster_path;
       return (
-          <a href={`/reviewMovie/${element.id}`} key={element.id} className="view">
-            <div className="zoom">
-              <img src={movie} alt="" className="image" />
-            
+        <a
+          href={`/reviewMovie/${element.id}`}
+          key={element.id}
+          className="view"
+        >
+          <div className="zoom">
+            <img src={movie} alt="" className="image" />
+
             <div className="background">
               <h3 className="name-title">{element.title}</h3>
             </div>
-            </div>
-          </a>
+          </div>
+        </a>
       );
     });
     return value;
   }
   const handleWindowwidth = () => {
-    setWidth(window.innerWidth)
-    
-  }
+    setWidth(window.innerWidth);
+  };
   useEffect(() => {
-    window.addEventListener('resize', handleWindowwidth)
+    window.addEventListener("resize", handleWindowwidth);
     return () => {
-      window.removeEventListener('resize', handleWindowwidth)
-    }
-  }, [])
+      window.removeEventListener("resize", handleWindowwidth);
+    };
+  }, []);
   return (
     <div>
       <div>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
-
-        <Content>
-          {renderImage(images)}
-          {show && <AiOutlineLoading3Quarters className="loading" />}
-        </Content>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Content>
+            {renderImage(images)}
+            {show && <AiOutlineLoading3Quarters className="loading" />}
+          </Content>
         </div>
         <Pagemovies>{elementPages}</Pagemovies>
         <div className="sec">
@@ -126,7 +131,6 @@ const Pagemovies = styled.div`
   }
   .page {
     color: #000;
-    
   }
   .activeMovie {
     background: #e66f20;
@@ -135,7 +139,6 @@ const Pagemovies = styled.div`
     color: #fff;
   }
   @media (max-width: 48em) {
-    
     .page {
       padding: 7px;
       font-size: 0.85rem;
@@ -162,7 +165,6 @@ const Content = styled.div`
   }
   .image {
     width: 100%;
-    height: 85%;
     opacity: 0.9;
     
   }
@@ -201,7 +203,6 @@ const Content = styled.div`
     }
   }
   .background {
-    overflow: hidden;
     background: linear-gradient(to right, #00f2c0, #00c3da);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -234,7 +235,7 @@ const Content = styled.div`
       opacity: 1;
     }
     .name-title {
-      font-size: 0.59rem;
+      font-size: 0.5rem;
       padding: 10px 5px;
     }
     .view {
