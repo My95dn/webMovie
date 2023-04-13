@@ -229,6 +229,22 @@ function ReviewMovie() {
       id: 816904,
       link: "https://www.youtube.com/embed/WRB8YIc4U68",
     },
+    {
+      id: 638974,
+      link: "https://www.youtube.com/embed/LM2F56uK0fs",
+    },
+    {
+      id: 758323,
+      link: "https://www.youtube.com/embed/YJXqvnT_rsk",
+    },
+    {
+      id: 700391,
+      link: "https://www.youtube.com/embed/5ieCIed2At0",
+    },
+    {
+      id: 615,
+      link: "https://www.youtube.com/embed/K83366UdtXw",
+    },
   ];
   let trailer = "";
   const [input, setInput] = useState("");
@@ -764,6 +780,7 @@ const MovieCommentary = styled.div`
     }
   }
   @media (min-width: 48em) and (max-width: 64em) {
+    overflow: hidden;
     padding: 10px;
     .comment {
       margin-left: -2px;
@@ -804,6 +821,7 @@ const TrailerMovie = styled.div`
     }
   }
   @media (min-width: 48em) and (max-width: 64em) {
+    
     .iframe {
       width: 97%;
     }
