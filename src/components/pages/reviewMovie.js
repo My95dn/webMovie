@@ -273,6 +273,10 @@ function ReviewMovie() {
       id: 713704,
       link: "https://www.youtube.com/embed/smTK_AeAPHs",
     },
+    {
+      id: 948713,
+      link: "https://www.youtube.com/embed/HvaXYZJ69Ow",
+    },
   ];
   let trailer = "";
   const [input, setInput] = useState("");
@@ -284,10 +288,12 @@ function ReviewMovie() {
   const [yes, setYes] = useState(false);
   const [feedback, setFeedback] = useState(false);
   const URL_IMG = "https://image.tmdb.org/t/p/w500";
-  const imageMovie = "https://actionewz.com/images/articles/banners/1406.jpeg"
+  const imageMovie = "https://actionewz.com/images/articles/banners/1406.jpeg";
   const dataMovies = useLoaderData();
   const show = URL_IMG + dataMovies.poster_path;
-  const showMovie = dataMovies.backdrop_path ? URL_IMG + dataMovies.backdrop_path : imageMovie;
+  const showMovie = dataMovies.backdrop_path
+    ? URL_IMG + dataMovies.backdrop_path
+    : imageMovie;
   const valueIndex = useRef();
   const commentImage = useRef();
   const group = "group member";
@@ -296,7 +302,7 @@ function ReviewMovie() {
   let user =
     "https://www.shutterstock.com/image-vector/user-icon-trendy-flat-style-260nw-418179865.jpg";
   function handleDelete(index) {
-    setsub(pre => pre -1)
+    setsub((pre) => pre - 1);
     comment.splice(index, 1);
     setComment((pre) => [...pre]);
   }
@@ -348,8 +354,8 @@ function ReviewMovie() {
     }
   };
   useEffect(() => {
-    handleActive()
-  }, [])
+    handleActive();
+  }, [comment]);
   const handleBack = (id) => {
     setactive(id);
     if (active == id) {
@@ -357,11 +363,11 @@ function ReviewMovie() {
     }
   };
   useEffect(() => {
-    handleBack()
-  }, [])
-  console.log(imageMovie)
+    handleBack();
+  }, []);
+  console.log(imageMovie);
   return (
-    <div style={{overflow: 'hidden'}}>
+    <div style={{ overflow: "hidden" }}>
       <div>
         <Header className="header" />
       </div>
@@ -418,9 +424,7 @@ function ReviewMovie() {
           </div>
         </TrailerMovie>
         <MovieCommentary>
-          <h4 className="comment" >
-            Movie commentary
-          </h4>
+          <h4 className="comment">Movie commentary</h4>
           <div className="container">
             <div className="comment-moudle">
               <div style={{ marginLeft: "5px" }}>
@@ -825,7 +829,6 @@ const MovieCommentary = styled.div`
   }
 `;
 const TrailerMovie = styled.div`
-  
   margin-bottom: 10px;
   text-align: center;
   padding-left: 32px;
@@ -849,11 +852,9 @@ const TrailerMovie = styled.div`
     }
   }
   @media (min-width: 48em) and (max-width: 64em) {
-    
     .iframe {
       width: 97%;
     }
-    
   }
 `;
 const Content = styled.div`
@@ -987,6 +988,5 @@ const Content = styled.div`
     .text-trailer {
       font-size: 1.1rem;
     }
-    
   }
 `;
