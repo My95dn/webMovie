@@ -277,6 +277,34 @@ function ReviewMovie() {
       id: 948713,
       link: "https://www.youtube.com/embed/HvaXYZJ69Ow",
     },
+    {
+      id: 447365,
+      link: "https://www.youtube.com/embed/u3V5KDHRQvk",
+    },
+    {
+      id: 868759,
+      link: "https://www.youtube.com/embed/IAdCsNtEuBU",
+    },
+    {
+      id: 1102776,
+      link: "https://www.youtube.com/embed/044PUmZQd1g",
+    },
+    {
+      id: 493529,
+      link: "https://www.youtube.com/embed/IiMinixSXII",
+    },
+    {
+      id: 420808,
+      link: "https://www.youtube.com/embed/p-5sVX7MRj8",
+    },
+    {
+      id: 946310,
+      link: "https://www.youtube.com/embed/wgyWDK2Gycc",
+    },
+    {
+      id: 385687,
+      link: "https://www.youtube.com/embed/aOb15GVFZxU",
+    },
   ];
   let trailer = "";
   const [input, setInput] = useState("");
@@ -336,7 +364,7 @@ function ReviewMovie() {
         setsub((pre) => pre + 1);
         setComment((pre) => [...pre, input]);
 
-        setInput("");
+        setInput(false);
       }
     }
   };
