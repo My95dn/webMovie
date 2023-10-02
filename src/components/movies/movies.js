@@ -5,6 +5,7 @@ import Footer from "../footer/footer";
 
 function Movies() {
   const [images, setImages] = useState([]);
+  console.log(images)
   const [loadMovie, setloadMovie] = useState(6);
   const [loading, setLoading] = useState(false);
   const numberIndex = 0;

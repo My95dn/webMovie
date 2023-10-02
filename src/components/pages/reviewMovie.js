@@ -405,6 +405,82 @@ function ReviewMovie() {
       id: 1036561,
       link: "https://www.youtube.com/embed/3FeRxeECUMI",
     },
+    {
+      id: 565770,
+      link: "https://www.youtube.com/embed/j5rpK0Ba7q8?si=jqh5KL9YLkTFrKXw",
+    },
+    {
+      id: 980489,
+      link: "https://www.youtube.com/embed/GVPzGBvPrzw?si=BxhGvp8NdSm0YAFg",
+    },
+    {
+      id: 615656,
+      link: "https://www.youtube.com/embed/dG91B3hHyY4?si=rqxu6Rb-yjRd4vzf",
+    },
+    {
+      id: 678512,
+      link: "https://www.youtube.com/embed/Rt0kp4VW1cI?si=zRPO5hIFFyCmYnZN",
+    },
+    {
+      id: 762430,
+      link: "https://www.youtube.com/embed/jzQn0-WH4WM?si=-o1Of4P6xcXHIVnZ",
+    },
+    {
+      id: 1008042,
+      link: "https://www.youtube.com/embed/aLAKJu9aJys?si=sTl7jJ2rjTPONUVq",
+    },
+    {
+      id: 968051,
+      link: "https://www.youtube.com/embed/QF-oyCwaArU?si=A9cXsvIftIDGmlL8",
+    },
+    {
+      id: 385687,
+      link: "https://www.youtube.com/embed/1fvzVMmARqY?si=t0PCxNriDLmp8hi-",
+    },
+    {
+      id: 346698,
+      link: "https://www.youtube.com/embed/GRyt3Ov4zz0?si=xwrotiRI4IZXsFZh",
+    },
+    {
+      id: 820609,
+      link: "https://www.youtube.com/embed/IcA02w6rm44?si=cL5i7MpVFV74c_qs",
+    },
+    {
+      id: 976573,
+      link: "https://www.youtube.com/embed/hXzcyx9V0xw?si=q3p7C4w4I8Sx_2To",
+    },
+    {
+      id: 1002338,
+      link: "https://www.youtube.com/embed/OylFBzk_cg0?si=321_T5Xa9tjiQiv8",
+    },
+    {
+      id: 852436,
+      link: "https://www.youtube.com/embed/1Xv1ft5T_XM?si=R6624dVHwzFT-eoc",
+    },
+    {
+      id: 717930,
+      link: "https://www.youtube.com/embed/0r6-YSKzKf4?si=g3qgtm6Owtgpabg8",
+    },
+    {
+      id: 1076364,
+      link: "https://www.youtube.com/embed/5emJgNiFbAA?si=b_JkTfNiV18MxXXL",
+    },
+    {
+      id: 951491,
+      link: "https://www.youtube.com/embed/t3PzUo4P21c?si=x0v0LsBhiRhwFSuV",
+    },
+    {
+      id: 335977,
+      link: "https://www.youtube.com/embed/eQfMbSe7F2g?si=xNOdvio-9Pam9ENt",
+    },
+    {
+      id: 744278,
+      link: "https://www.youtube.com/embed/EH0379AquBk?si=CEv7NwEc0Ifotf_9",
+    },
+    {
+      id: 790493,
+      link: "https://www.youtube.com/embed/TuiRw0v3bAw?si=26rjtKtY5mfwVL0f",
+    },
   ];
   let trailer = "";
   const [input, setInput] = useState("");

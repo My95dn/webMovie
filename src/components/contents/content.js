@@ -8,6 +8,7 @@ import { Context } from "../../App";
 import Footer from "../footer/footer";
 function Contents() {
   const img = useContext(Context);
+  console.log(img)
   const [test, setTest] = useState(1);
   const [show, setshow] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);

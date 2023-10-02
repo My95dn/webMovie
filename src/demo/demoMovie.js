@@ -8,50 +8,50 @@ function DemoSlider(props) {
     const [volum, setvolum] = useState(false)
     useEffect(() => {
     }, [])
-    return(
+    return (
         <div>
-        <Movie>
-            <ReactPlayer 
-            className='section'
-            width='100%'
-            height='100%'  
-            playing={true}
-            
-            loop={true}
-            volume={volum ? 1 : 0}
-            muted={false}
-            url="https://vimeo.com/328542867"
-            />
-            <div>
-                <div className='title'>
-                    CGV Elite
-                </div>
-                <p className='text'>
-                    CGV Elite Launch Campaign Director:  Fernanda Weinfeld Production Company: Awake Film Agency: Akqua
-                </p>
-                {
-                    volum ? (
+            <Movie>
+                <ReactPlayer
+                    className='section'
+                    width='100%'
+                    height='100%'
+                    playing={true}
 
-                        <VscUnmute className='icon'
-                        onClick={() => setvolum(pre => !pre)}
-                        />
-                    ) : (
+                    loop={true}
+                    volume={volum ? 1 : 0}
+                    muted={false}
+                    url="https://vimeo.com/328542867"
+                />
+                <div>
+                    <div className='title'>
+                        CGV Elite
+                    </div>
+                    <p className='text'>
+                        CGV Elite Launch Campaign Director:  Fernanda Weinfeld Production Company: Awake Film Agency: Akqua
+                    </p>
+                    {
+                        volum ? (
 
-                        <VscMute className='icon'
-                        onClick={() => setvolum(pre => !pre)}
-                        /> 
+                            <VscUnmute className='icon'
+                                onClick={() => setvolum(pre => !pre)}
+                            />
+                        ) : (
+
+                            <VscMute className='icon'
+                                onClick={() => setvolum(pre => !pre)}
+                            />
                         )
-                        
-                        
-                    }
-                    
-            </div>
-            
-        </Movie>
-        <AppIframe >
-                <video src={video} autoPlay loop controls muted className="video"/>
 
-        </AppIframe>
+
+                    }
+
+                </div>
+
+            </Movie>
+            <AppIframe >
+                <video src={video} autoPlay loop controls muted className="video" />
+
+            </AppIframe>
         </div>
     )
 }
@@ -115,6 +115,11 @@ background-color: #000;
     font-size: 2.7rem;
     border-radius: 50%;
     background: rgba(100,100,100,0.3);
+    cursor: pointer;
+    &:hover {
+        background-color: #000;
+        color: #fff;
+    }
 }
 
 @media (max-width: 48em) {
@@ -133,6 +138,8 @@ background-color: #000;
     }
     .icon {
         font-size: 2rem;
+       
+        
     }
 }
 @media (min-width: 48em) and (max-width: 64em) {
