@@ -481,6 +481,78 @@ function ReviewMovie() {
       id: 790493,
       link: "https://www.youtube.com/embed/TuiRw0v3bAw?si=26rjtKtY5mfwVL0f",
     },
+    {
+      id: 897087,
+      link: "https://www.youtube.com/embed/0u5E1pQK8Fc?si=GOf4ORtEnhkbrivM",
+    },
+    {
+      id: 901362,
+      link: "https://www.youtube.com/embed/qZ40Z62tcXM?si=SpPjWhJLkMOx5i_V",
+    },
+    {
+      id: 1075794,
+      link: "https://www.youtube.com/embed/G_AEL-Xo5l8?si=bjQHzuHgnXftgo30",
+    },
+    {
+      id: 787699,
+      link: "https://www.youtube.com/embed/otNh9bTjXWg?si=iamQ73Ceicq991V8",
+    },
+    {
+      id: 872585,
+      link: "https://www.youtube.com/embed/uYPbbksJxIg?si=CmbP1Pi5qSQlcBg4",
+    },
+    {
+      id: 466420,
+      link: "https://www.youtube.com/embed/EP34Yoxs3FQ?si=U_JKEXaEFwfJBOpD",
+    },
+    {
+      id: 1001835,
+      link: "https://www.youtube.com/embed/Q0who82bdhU?si=iz_kxD2QoKKNSQIQ",
+    },
+    {
+      id: 670292,
+      link: "https://www.youtube.com/embed/ex3C1-5Dhb8?si=E08mCmgOMeYzaw3t",
+    },
+    {
+      id: 507089,
+      link: "https://www.youtube.com/embed/0VH9WCFV6XQ?si=asXrtcLmEwP81YTe",
+    },
+    {
+      id: 951546,
+      link: "https://www.youtube.com/embed/12K6JVjEYGA?si=0I5XAYb_suYZdgJi",
+    },
+    {
+      id: 566810,
+      link: "https://www.youtube.com/embed/ZbCUeIFB-38?si=VVO7brchbg11KVuT",
+    },
+    {
+      id: 1046032,
+      link: "https://www.youtube.com/embed/28qvBwqma2c?si=39hcmctqYEvWLuru",
+    },
+    {
+      id: 1047925,
+      link: "https://www.youtube.com/embed/YRQDrVr2VZs?si=YKvm1ZcGD8UdfwcF",
+    },
+    {
+      id: 575264,
+      link: "https://www.youtube.com/embed/avz06PDqDbM?si=Pg1SZLv3BZq5xPIg",
+    },
+    {
+      id: 299054,
+      link: "https://www.youtube.com/embed/DhlaBO-SwVE?si=BPxLp1tieGG3RXj5",
+    },
+    {
+      id: 695721,
+      link: "https://www.youtube.com/embed/RDE6Uz73A7g?si=6xjDyC09qzQiLz6K",
+    },
+    {
+      id: 940721,
+      link: "https://www.youtube.com/embed/VvSrHIX5a-0?si=lXLdFvXwjJ_cDK2i",
+    },
+    {
+      id: 479753,
+      link: "https://www.youtube.com/embed/poM_9ELcCGE?si=BiT_oXNoZp_H-XPO",
+    },
   ];
   let trailer = "";
   const [input, setInput] = useState("");
