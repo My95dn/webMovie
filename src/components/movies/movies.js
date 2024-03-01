@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import Footer from "../footer/footer";
+import SoundCloudPlayer from "react-player/soundcloud";
+import { setSelectionRange } from "@testing-library/user-event/dist/utils";
 
 function Movies() {
   const [images, setImages] = useState([]);
@@ -51,6 +53,14 @@ function Movies() {
     return () => {
       if (time) {
         clearTimeout(time);
+        
+
+       
+        
+
+
+
+
       }
     };
   };

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { ServerStyleSheet } from "styled-components";
 
 import { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
@@ -8,6 +8,7 @@ import { Context } from "../../App";
 import Footer from "../footer/footer";
 function Contents() {
   const img = useContext(Context);
+  console.log(img)
   const [test, setTest] = useState(1);
   const [show, setshow] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
@@ -21,7 +22,6 @@ function Contents() {
   for (let i = 0; i < movieLength; i++) {
     pages.push(i + 1);
   }
-
   const handlePages = (e) => {
     const time = setTimeout(() => {
       if (width >= 1024) {
@@ -29,7 +29,9 @@ function Contents() {
       } else {
         if (width >= 768) {
           window.scrollTo(0, 600);
+          
         }
+
       }
       if (width < 768) {
         window.scrollTo(0, 390);
@@ -37,14 +39,19 @@ function Contents() {
       setshow((pre) => !pre);
       setTest(e.target.id);
     }, 800);
+
     setshow((pre) => !pre);
     return () => {
       if (time) {
         clearTimeout(time);
+
       }
     };
   };
+
+
   const elementPages = pages.map((element) => {
+
     return (
       <div key={element} style={{ marginBottom: "30px" }}>
         <ul>
@@ -75,6 +82,7 @@ function Contents() {
 
             <div className="background">
               <h3 className="name-title">{element.title}</h3>
+
             </div>
           </div>
         </a>
@@ -268,5 +276,6 @@ const Content = styled.div`
     .name-title {
       font-size: 0.9rem;
     }
+
   }
 `;

@@ -553,6 +553,86 @@ function ReviewMovie() {
       id: 479753,
       link: "https://www.youtube.com/embed/poM_9ELcCGE?si=BiT_oXNoZp_H-XPO",
     },
+    {
+      id: 1096197,
+      link: "https://www.youtube.com/embed/PSEoAaSswgo?si=mS5BZWA8uzbscfH4",
+    },
+    {
+      id: 792307,
+      link: "https://www.youtube.com/embed/RlbR5N6veqw?si=sCwOD-OlZTAysVgo",
+    },
+    {
+      id: 969492,
+      link: "https://www.youtube.com/embed/yTFazxfrXVw?si=GbtW0t36yKfiP2r8",
+    },
+    {
+      id: 1072790,
+      link: "https://www.youtube.com/embed/UtjH6Sk7Gxs?si=ngcmDSmJWy7f2xi4",
+    },
+    {
+      id: 693134,
+      link: "https://www.youtube.com/embed/Way9Dexny3w?si=S8Xovjw58nhySOKJ",
+    },
+    {
+      id: 940551,
+      link: "https://www.youtube.com/embed/cQfo0HJhCnE?si=ByDkrALQwNQ8VY2H",
+    },
+    {
+      id: 949429,
+      link: "https://www.youtube.com/embed/THOSPwDRfp4?si=TuN9QcUg7jHzFC4z",
+    },
+    {
+      id: 931642,
+      link: "https://www.youtube.com/embed/6LiKKFZyhRU?si=QWy6ccsQE3uf3f-r",
+    },
+    {
+      id: 1211483,
+      link: "https://www.youtube.com/embed/85Sg3MTrXyo?si=Dqj6mgKhoMw_4qHy",
+    },
+    {
+      id: 609681,
+      link: "https://www.youtube.com/embed/wS_qbDztgVY?si=erIlTuy_qRyk16li",
+    },
+    {
+      id: 1139566,
+      link: "https://www.youtube.com/embed/G_WsQNsfx1Q?si=M60yp-kpasBmHV7_",
+    },
+    {
+      id: 787699,
+      link: "https://www.youtube.com/embed/otNh9bTjXWg?si=wqUd1JMx5YJZK016",
+    },
+    {
+      id: 438631,
+      link: "https://www.youtube.com/embed/U2Qp5pL3ovA?si=9iAF-53smU3oOAbH",
+    },
+    {
+      id: 933131,
+      link: "https://www.youtube.com/embed/hKbo-ZKdSqw?si=G9Lflp4_Azqh-yFx",
+    },
+    {
+      id: 1026436,
+      link: "https://www.youtube.com/embed/vk2OJZHutBM?si=QIqgqpxVYBRqz-s-",
+    },
+    {
+      id: 572802,
+      link: "https://www.youtube.com/embed/UGc5Tzz19UY?si=ntcmze8PULjDDlS0",
+    },
+    {
+      id: 1183905,
+      link: "https://www.youtube.com/embed/DfHeq3qVBoE?si=4f9uG6btLL8vsYdP",
+    },
+    {
+      id: 1022796,
+      link: "https://www.youtube.com/embed/oyRxxpD3yNw?si=Wn8zNwU_920Sq30g",
+    },
+    {
+      id: 980137,
+      link: "https://www.youtube.com/embed/sPVicWnq_BU?si=OoRD03y9CaEuy4XG",
+    },
+    {
+      id: 866398,
+      link: "https://www.youtube.com/embed/SzINZZ6iqxY?si=8zRcNtMXX8AvsQ_o",
+    },
   ];
   let trailer = "";
   const [input, setInput] = useState("");
@@ -595,6 +675,8 @@ function ReviewMovie() {
     trailerMovies.forEach((element) => {
       if (element.id == dataMovies.id) {
         trailer = element.link;
+        
+
       }
     });
   };
@@ -621,18 +703,21 @@ function ReviewMovie() {
   const handleAvatar = (event) => {
     const file = event.target.files[0];
     file.preview = URL.createObjectURL(file);
+    
     setAvatar(file);
   };
   const handleActive = (id) => {
     setactiveIndex(id);
     if (activeindex == id) {
       setYes((pre) => !pre);
-    }
+        
+      }
   };
   useEffect(() => {
     handleActive();
   }, [comment]);
   const handleBack = (id) => {
+    
     setactive(id);
     if (active == id) {
       setFeedback((pre) => !pre);
@@ -830,6 +915,8 @@ function ReviewMovie() {
                             <AiFillDelete
                               className="dalete"
                               onClick={() => handleDelete(index)}
+
+                              
                             />
                           </p>
                         </div>
